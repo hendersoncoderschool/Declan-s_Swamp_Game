@@ -1,0 +1,11 @@
+Model Information:
+* title:	Spongebob SquarePants Squidward
+* source:	https://sketchfab.com/3d-models/spongebob-squarepants-squidward-f3c7341dc0c04d888cc9556a949e6d11
+* author:	JackTheOhio (https://sketchfab.com/ijackprovostjr)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Spongebob SquarePants Squidward" (https://sketchfab.com/3d-models/spongebob-squarepants-squidward-f3c7341dc0c04d888cc9556a949e6d11) by JackTheOhio (https://sketchfab.com/ijackprovostjr) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
