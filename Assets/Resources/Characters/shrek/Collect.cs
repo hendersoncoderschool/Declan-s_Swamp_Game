@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Collect : MonoBehaviour
 {
+    public GameObject Dialouge_Box;
+    public TMP_Text _Text;
+    public List<string> Dialouge;
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.CompareTag("Player"))
         {
             GameObject.Find("Shrek").GetComponent<Mooove>().potions++;
+            Dialouge_Box.SetActive(true);
+            _Text.text = Dialouge[0];
+            GameObject.Find("Canvas").GetComponent<Canva>().Dialouge = Dialouge;
             Destroy(gameObject);
         }
     }

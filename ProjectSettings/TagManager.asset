@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Liquid Water
+  - Taco
   layers:
   - Default
   - TransparentFX

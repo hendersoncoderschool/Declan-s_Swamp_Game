@@ -12,6 +12,8 @@ public class Squidward : MonoBehaviour
     public GameObject prompt;
     private int line_dancing;
     private bool active;
+    private bool hit_by_potion;
+    public GameObject Hand_me_that_Mirror;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -20,6 +22,24 @@ public class Squidward : MonoBehaviour
             prompt.SetActive(true);
             active = true;
         }
+        if(collider.CompareTag("Liquid Water"))
+        {
+            //GameObject Squid = Instantiate(Hand_me_that_Mirror, transform.position, transform.rotation);
+            Destroy(collider.gameObject);
+            Hand_me_that_Mirror.transform.position = transform.position;
+            Hand_me_that_Mirror.SetActive(true);
+            Destroy(gameObject);
+            /*
+            prompt.SetActive(true);
+            hit_by_potion = true;
+            active = true;
+            */
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 
     private void OnTriggerExit(Collider collider)
@@ -44,22 +64,32 @@ public class Squidward : MonoBehaviour
         _Text.text = Dialouge[0];
         line_dancing = 0;
         active = false;
+        hit_by_potion = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        print(line_dancing);
         if (active)
         {
-            if (line_dancing == 4 && Input.GetKeyDown("space"))
+            if (line_dancing == Dialouge.Count && Input.GetKeyDown("space"))
                 Dialouge_Box.SetActive(false);
             //prompt.SetActive(true);
+            /*
+            if (hit_by_potion == true)
+            {
+                Dialouge_Box.SetActive(true);
+                _Text.GetComponent<TMP_Text>().text = Dialouge[4];
+                hit_by_potion = false;
+                line_dancing = 4;
+            }
+            */
             if(Input.GetKeyDown("e"))
             {
                 Dialouge_Box.SetActive(true);
-                if (line_dancing == 4)
-                    line_dancing -= 4;
+                print(Dialouge.Count);
+                if (line_dancing == Dialouge.Count)
+                    line_dancing -= Dialouge.Count;
                 
 
                 _Text.GetComponent<TMP_Text>().text = Dialouge[line_dancing];

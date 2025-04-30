@@ -1,0 +1,11 @@
+Model Information:
+* title:	Taco
+* source:	https://sketchfab.com/3d-models/taco-dda5d6db7f3141d397f15985e22bbd71
+* author:	KateGirl.SK (https://sketchfab.com/KateGirl.SK)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Taco" (https://sketchfab.com/3d-models/taco-dda5d6db7f3141d397f15985e22bbd71) by KateGirl.SK (https://sketchfab.com/KateGirl.SK) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
