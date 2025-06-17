@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Onion_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 22c812975b86c0443bb595d0e08c9b93, type: 3}
+      propertyPath: m_TagString
+      value: Onion
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 22c812975b86c0443bb595d0e08c9b93, type: 3}
       propertyPath: m_LocalScale.x
       value: 10

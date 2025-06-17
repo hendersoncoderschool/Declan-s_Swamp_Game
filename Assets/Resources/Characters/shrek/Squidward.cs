@@ -14,6 +14,7 @@ public class Squidward : MonoBehaviour
     private bool active;
     private bool hit_by_potion;
     public GameObject Hand_me_that_Mirror;
+    public GameObject Canvas;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -21,6 +22,12 @@ public class Squidward : MonoBehaviour
         {
             prompt.SetActive(true);
             active = true;
+            Dialouge_Box.SetActive(true);
+            _Text.text = Dialouge[0];
+            Canvas.SetActive(true);
+            Canvas.GetComponent<Canva>().Dialouge = Dialouge;
+            GameObject.Find("Canvas").GetComponent<Canva>().Dialouge = Dialouge;
+            Canvas.GetComponent<Canva>().Numbers = 0;
         }
         if(collider.CompareTag("Liquid Water"))
         {
@@ -72,10 +79,10 @@ public class Squidward : MonoBehaviour
     {
         if (active)
         {
-            if (line_dancing == Dialouge.Count && Input.GetKeyDown("space"))
+            /*if (line_dancing == Dialouge.Count && Input.GetKeyDown("space"))
                 Dialouge_Box.SetActive(false);
             //prompt.SetActive(true);
-            /*
+            
             if (hit_by_potion == true)
             {
                 Dialouge_Box.SetActive(true);
@@ -83,7 +90,7 @@ public class Squidward : MonoBehaviour
                 hit_by_potion = false;
                 line_dancing = 4;
             }
-            */
+            
             if(Input.GetKeyDown("e"))
             {
                 Dialouge_Box.SetActive(true);
@@ -94,7 +101,7 @@ public class Squidward : MonoBehaviour
 
                 _Text.GetComponent<TMP_Text>().text = Dialouge[line_dancing];
                 line_dancing += 1;
-            }
+            }*/
         }
     }
 }

@@ -5,6 +5,7 @@ using TMPro;
 
 public class Collect : MonoBehaviour
 {
+    public GameObject Canvas;
     public GameObject Dialouge_Box;
     public TMP_Text _Text;
     public List<string> Dialouge;
@@ -15,7 +16,10 @@ public class Collect : MonoBehaviour
             GameObject.Find("Shrek").GetComponent<Mooove>().potions++;
             Dialouge_Box.SetActive(true);
             _Text.text = Dialouge[0];
+            Canvas.SetActive(true);
+            Canvas.GetComponent<Canva>().Dialouge = Dialouge;
             GameObject.Find("Canvas").GetComponent<Canva>().Dialouge = Dialouge;
+            Canvas.GetComponent<Canva>().Numbers = 0;
             Destroy(gameObject);
         }
     }

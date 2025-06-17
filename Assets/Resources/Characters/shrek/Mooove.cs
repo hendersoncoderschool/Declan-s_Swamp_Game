@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Mooove : MonoBehaviour
 {
@@ -14,11 +15,18 @@ public class Mooove : MonoBehaviour
     public float speed;
     public int potions;
     public GameObject potion;
+    public GameObject onion;
     public Material BLOODRED;
     public GameObject Body;
     private GameObject NewPotion;
+    private GameObject NewOnion;
     public GameObject Image;
     public bool GameOgre;
+    public int Onions;
+    public TMP_Text onionCount;
+    public int sacredOnions;
+    private float rateOfFire;
+    public TMP_Text deathNote;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +34,17 @@ public class Mooove : MonoBehaviour
         potions = 0;
         rb = GetComponent<Rigidbody>();
         GameOgre = false;
+        rateOfFire = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        rateOfFire += Time.deltaTime;
+        if(rateOfFire > 0.2f)
+        {
+            rateOfFire = 0f;
+        }
         print(potions);
         Pig_Vat.transform.position = transform.position + new Vector3(0f, 1f);
 
@@ -89,6 +103,16 @@ public class Mooove : MonoBehaviour
             }
             NewPotion = Instantiate(potion, transform.position + transform.forward * 2f, transform.rotation);
             NewPotion.GetComponent<Rigidbody>().AddForce(transform.forward * 1000f, ForceMode.Impulse);
+            anim.SetTrigger("Throw");
+        }
+
+        if (sacredOnions > 0 && Input.GetKey("r") && Onions > 0 && rateOfFire == 0f)
+        {
+            Onions -= 1;
+            onionCount.text = "Onions = " + Onions.ToString();
+            NewOnion = Instantiate(onion, transform.position + transform.forward * 2f, transform.rotation);
+            NewOnion.GetComponent<Rigidbody>().AddForce(transform.forward * 50f, ForceMode.Impulse);
+            
         }
 
         if(rb.velocity.magnitude > maxSpeed)
@@ -113,6 +137,12 @@ public class Mooove : MonoBehaviour
             Image.SetActive(true);
             Destroy(collision.gameObject);
             GameOgre = true;
+        }
+        if (collision.gameObject.CompareTag("Onion"))
+        {
+            Onions += 1;
+            onionCount.text = "Onions = " + Onions.ToString();
+            Destroy(collision.gameObject);
         }
     }
 }
